@@ -26,6 +26,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off', // Fix 'React' must be in scope when using JSX  react/react-in-jsx-scope,
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/no-explicit-any': 'off', // turn off for now
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
     },
     settings: {
         react: {

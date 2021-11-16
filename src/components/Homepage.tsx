@@ -1,5 +1,5 @@
 import millify from 'millify';
-import { Typography, Row, Col, Statistic, Spin } from 'antd';
+import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from 'services/CryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
