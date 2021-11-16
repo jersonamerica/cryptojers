@@ -7,6 +7,7 @@ import Exchanges from 'components/Exchanges';
 import Cryptocurrencies from 'components/Cryptocurrencies';
 import CryptoDetails from 'components/CryptoDetails';
 import News from 'components/News';
+import NotFound from 'components/NotFound';
 import './App.css';
 
 const App = () => (
@@ -33,6 +34,7 @@ const App = () => (
                         <Route exact path="/news">
                             <News />
                         </Route>
+                        <Route component={NotFound} />
                     </Switch>
                 </div>
             </Layout>
