@@ -6,6 +6,8 @@ import { useGetCryptoNewsQuery } from 'services/CryptoNewsApi';
 import { useGetCryptosQuery } from 'services/CryptoApi';
 import { SelectValue } from 'antd/lib/select';
 
+import Loader from './Loader';
+
 type Props = {
     simplified?: boolean;
 };
@@ -24,7 +26,7 @@ const News: FC<Props> = ({ simplified }) => {
 
     const { data: cryptoList } = useGetCryptosQuery(100);
 
-    if (isFetching) return <p>Loading...</p>;
+    if (isFetching) return <Loader />;
 
     return (
         <Row gutter={[24, 24]}>
@@ -59,7 +61,11 @@ const News: FC<Props> = ({ simplified }) => {
                     <Card hoverable className="news-card">
                         <a href={news.url} target="_blank" rel="noreferrer">
                             <div className="news-image-container">
-                                <Title className="news-title" level={4}>
+                                <Title
+                                    className="news-title"
+                                    level={4}
+                                    title={news.name}
+                                >
                                     {news.name}
                                 </Title>
                                 <img
@@ -74,10 +80,8 @@ const News: FC<Props> = ({ simplified }) => {
                                     }}
                                 />
                             </div>
-                            <p>
-                                {news.description > 100
-                                    ? `${news.description.substring(0, 100)}...`
-                                    : news.description}
+                            <p className="news-description">
+                                {news.description}
                             </p>
                             <div className="provider-container">
                                 <div>

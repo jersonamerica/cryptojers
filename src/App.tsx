@@ -15,7 +15,7 @@ const App = () => (
             <NavBar />
         </div>
         <div className="main">
-            <Layout>
+            <Layout className="main-content">
                 <div className="routes">
                     <Switch>
                         <Route exact path="/">
